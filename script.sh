@@ -1,1 +1,1 @@
-echo 'i m from bahs'
+echo 'i m from bahs $1'
