@@ -44,7 +44,7 @@ jobs:
         run: |
           ls
           chmod +x ./script.sh
-          $"sh ./script.sh good" 
+          $"./script.sh" "xxxx"  
         shell: bash
         
       # Flutter env setup
