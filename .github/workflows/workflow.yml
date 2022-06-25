@@ -40,6 +40,12 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, "${{github.event.inputs.name}}"!
         
+      - name: Update Splash Screen & App Icon
+        run: |
+          ls
+          chmod +x ./script.sh
+          $"./script.sh" 
+        shell: bash
         
       # Flutter env setup
       - uses: actions/setup-java@v1      
