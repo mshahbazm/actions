@@ -17,6 +17,10 @@ on:
         default: "test"
       name:
         default: "nauman"
+      flutter_version:
+        description: 'Flutter Framework version'
+        required: true
+        default: '2.5.3' 
       
       
 
@@ -37,11 +41,16 @@ jobs:
         run: echo Hello, "${{github.event.inputs.name}}"!
         
         
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: ls
+      # Flutter env setup
+      - uses: actions/setup-java@v1      
+        with:
+          java-version: '12.x'
+      - name: Set Flutter version
+        uses: subosito/flutter-action@v2.2.0
+        with:
+          flutter-version: '${{ github.event.inputs.flutter_version }}'
         
-        
+
         
 
       # Runs a set of commands using the runners shell
