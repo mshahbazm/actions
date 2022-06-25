@@ -49,8 +49,7 @@ jobs:
         uses: subosito/flutter-action@v2.2.0
         with:
           flutter-version: '${{ github.event.inputs.flutter_version }}'
-        
-
+      - run: flutter --version
         
 
       # Runs a set of commands using the runners shell
