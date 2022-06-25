@@ -46,8 +46,7 @@ jobs:
           chmod +x ./bash-script.sh
           param1='GitHub'
           param2=$(date +"%Y-%m-%d %H:%M:%S")
-          param3=4
-          ./bash-script.sh "${param1}" "${param2}" "${param3}""
+          ./bash-script.sh "${param1}" "${param2}"
           
       - name: Update Splash Screen & App Icon
         run: |
