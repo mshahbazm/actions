@@ -55,7 +55,7 @@ jobs:
      # Create new branck
       - name: Create New Branch "${{github.event.inputs.branch}}"
         run: |
-          git checkout -b "${{github.event.inputs.branch}}
+          git checkout -b "${{github.event.inputs.branch}}"
           git push --set-upstream origin "${{github.event.inputs.branch}}"
 
           
