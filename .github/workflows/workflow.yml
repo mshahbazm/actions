@@ -49,4 +49,13 @@ jobs:
           echo test, and deploy your project.
           mkdir testdir
           ls
+     
+     # Create new branck
+      - name: Create New Branch
+        run: |
+          git checkout -b test-branch
+          git push
+
           
+          
+          git checkout feature_inprogress_branch
