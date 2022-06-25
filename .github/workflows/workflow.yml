@@ -39,7 +39,16 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, "${{github.event.inputs.name}}"!
-        
+  
+      - name: Run bash script
+        shell: bash
+        run: |
+          chmod +x ./bash-script.sh
+          param1='GitHub'
+          param2=$(date +"%Y-%m-%d %H:%M:%S")
+          param3=4
+          ./bash-script.sh "${param1}" "${param2}" "${param3}""
+          
       - name: Update Splash Screen & App Icon
         run: |
           ls
