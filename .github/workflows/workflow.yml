@@ -54,7 +54,7 @@ jobs:
       - name: Create New Branch
         run: |
           git checkout -b test-branch
-          git push
+           git push --set-upstream origin test-branch
 
           
           
