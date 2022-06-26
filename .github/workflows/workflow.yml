@@ -40,45 +40,16 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, "${{github.event.inputs.name}}"!
   
-      - name: Run bash script
-        shell: bash
-        run: |
-          chmod +x ./bash-script.sh
-          param1='GitHub'
-          param2=$(date +"%Y-%m-%d %H:%M:%S")
-          ./bash-script.sh "${param1}" "${param2}"
-          
-      - name: Update Splash Screen & App Icon
-        run: |
-          ls
-          chmod +x ./script.sh
-          $ ./script.sh test
-        shell: bash
-        
-      # Flutter env setup
-      - uses: actions/setup-java@v1      
+      #upload
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload
+        id: S3
         with:
-          java-version: '12.x'
-      - name: Set Flutter version
-        uses: subosito/flutter-action@v2.2.0
-        with:
-          flutter-version: '${{ github.event.inputs.flutter_version }}'
-      - run: flutter --version
-        
+          aws_key_id: AKIASYIFIU74AHHBMTVB
+          aws_secret_access_key: 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
+          aws_bucket: wp-app-builds
+          source_dir: 'build/app/outputs/flutter-apk/app.apk'
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          mkdir testdir
-          ls
-     
-     # Create new branck
-      - name: Create New Branch "${{github.event.inputs.branch}}"
-        run: |
-          git checkout -b "${{github.event.inputs.branch}}"
-          git push --set-upstream origin "${{github.event.inputs.branch}}"
 
           
 
