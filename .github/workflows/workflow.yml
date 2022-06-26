@@ -50,7 +50,7 @@ jobs:
           aws_key_id: AKIASYIFIU74AHHBMTVB
           aws_secret_access_key: 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
           aws_bucket: wp-app-builds
-          source_dir: './build/app/outputs/flutter-apk/app.apk'
+          source_dir: './build/app/outputs/flutter-apk'
     
 
           
